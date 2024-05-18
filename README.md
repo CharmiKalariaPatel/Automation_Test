@@ -1,6 +1,6 @@
 # Automation_Test
 
-Description
+Description : 
 This is an automation solution to find league,team and player from the app and make sure user can navigate through all pages
 
 Prerequisites
