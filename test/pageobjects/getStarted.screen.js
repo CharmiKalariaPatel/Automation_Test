@@ -51,5 +51,61 @@ class getStarted extends Utils{
        await this.waitToBeClickable(elem);
        return elem;   
     }
+    
+    async leagueTitle(){
+        const elem = await $("//*[@text='My Leagues']");
+        await this.waitToBeClickable(elem);
+        return elem;   
+    }
+    
+    async selectMbaGame(){
+        const elem = await $('//android.widget.TextView[@resource-id="com.fivemobile.thescore:id/league_name_text" and @text="MLB"]');
+        await this.waitToBeClickable(elem);
+        return elem;   
+    }
+
+    async verifyLeagueTitle(){
+        const elem = await $('//android.widget.TextView[@resource-id="com.fivemobile.thescore:id/titleTextView"]');
+        await this.waitToBeClickable(elem);
+        return elem;   
+    }
+
+    async backNavigation(){
+        const elem = await $('//android.widget.ImageButton[@content-desc="Navigate up"]');
+        await this.waitToBeClickable(elem);
+        return elem;   
+    }
+    
+    async firstGame(){
+        const elem = await $('(//android.view.ViewGroup[@resource-id="com.fivemobile.thescore:id/scores_container"])[1]')
+        await this.waitToBeClickable(elem);
+        return elem;   
+    }
+
+    async closePopup(){
+        const elem = await $('//android.widget.ImageView[@resource-id="com.fivemobile.thescore:id/close"]');
+        await this.waitToBeClickable(elem);
+        return elem;   
+    }
+       
+    async homeTeam(){
+        const elem = await $('//android.view.ViewGroup[@resource-id="com.fivemobile.thescore:id/top_team"]');
+        //const elem = await $('//android.view.ViewGroup[@index="2"]');
+        await this.waitToBeClickable(elem);
+        return elem;   
+    }
+    
+    async playerStat(){
+        const elem = await $("//*[@text='PLAYER STATS']");
+        await this.waitToBeClickable(elem);
+        return elem;   
+    }
+    
+    async firstPlayerSelection(){
+        const elem = await $('//androidx.recyclerview.widget.RecyclerView[@resource-id="com.fivemobile.thescore:id/recyclerView"]/android.view.ViewGroup[2]');
+        await this.waitToBeClickable(elem);
+        return elem;   
+    }
+
 }
 module.exports = new getStarted();
